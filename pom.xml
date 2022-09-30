@@ -62,7 +62,35 @@
     <artifactId>extentreports</artifactId>
     <version>5.0.9</version>
 </dependency>
+
+<dependency>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-surefire-plugin</artifactId>
+  <version>3.0.0-M7</version>
+  <type>maven-plugin</type>
+</dependency>
   
   </dependencies>
+  
+  <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.10.1</version>
+          <configuration>
+            <verbose>true</verbose>
+            <fork>true</fork>
+            <executable>${java.home}</executable>
+            <compilerVersion>11</compilerVersion>
+            <source>11</source>
+            <target>17</target>      
+            </configuration>
+        </plugin>
+      </plugins>    
+  </build>
+<properties>
+<java.home>C:\Program Files\Java\jdk-11.0.5\bin\javac</java.home>
+</properties>
 
 </project>
